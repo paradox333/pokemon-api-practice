@@ -21,6 +21,12 @@ docker compose up -d -> linux
 docker-compose up -d -> otros
 ```
 
+5. Reconstruir base de datos
+```
+  GET: 
+    http://localhost:3000/api/v2/seed
+```
+
 ## Stack usado
 
 *MongoDB
