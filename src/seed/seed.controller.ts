@@ -8,8 +8,8 @@ export class SeedController {
   
 
   @Get()
-  executeSeed() {
-    return this.seedService.excecuteSeed();
+  async executeSeed() {
+    return await this.seedService.excecuteSeed();
   }
 
 }

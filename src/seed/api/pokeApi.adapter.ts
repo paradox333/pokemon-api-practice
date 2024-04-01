@@ -1,13 +1,13 @@
 import axios, { AxiosInstance } from "axios";
-import { PokeResponse } from "../interfaces/poke-response.interface";
-import { Injectable } from "@nestjs/common";
-@Injectable()
-export class PokeApiAdapter{
+import { HttpAdapter } from '../interfaces/http-adapter.interface';
+
+
+export class PokeApiAdapter implements HttpAdapter{
 
     private readonly axios: AxiosInstance = axios;
 
-    async get(url: string){
-        await this.axios.get(url);
-        return;
+    async get<T>(url: string): Promise<T>{
+        const data = await this.axios.get<T>(url);
+        return data.data;
     }
 }
